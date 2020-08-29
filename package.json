@@ -2,8 +2,13 @@
   "name": "format-on-auto-save",
   "displayName": "Format on auto save",
   "description": "Formats the current document on auto save",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "publisher": "BDSoftware",
+  "icon": "images/logo.png",
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.48.0"
   },
@@ -24,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bjorndaniel/format-on-auto-save.git"
+    "url": "https://github.com/bjorndaniel/format-on-auto-save.git"
   },
   "devDependencies": {
     "@types/vscode": "^1.48.0",

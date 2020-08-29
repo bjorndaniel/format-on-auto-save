@@ -7,11 +7,15 @@ export function activate(context: vscode.ExtensionContext) {
   const workspace = vscode.workspace;
   context.subscriptions.push(
     workspace.onWillSaveTextDocument((e) => {
-	  //TODO: Refactor to use vscode.executeFormatDocumentProvider
-      vscode.commands.executeCommand(
-        "editor.action.format",
-        activeEditor?.document.uri
-      );
+      const editorConfig = workspace.getConfiguration("editor"),
+        shouldFormat = editorConfig.get("formatOnSave");
+      if (shouldFormat) {
+        //TODO: Refactor to use vscode.executeFormatDocumentProvider
+        vscode.commands.executeCommand(
+          "editor.action.format",
+          activeEditor?.document.uri
+        );
+      }
     })
   );
 }
