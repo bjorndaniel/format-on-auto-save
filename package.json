@@ -22,6 +22,10 @@
     "pretest": "yarn run compile && yarn run lint",
     "test": "node ./out/test/runTest.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bjorndaniel/format-on-auto-save.git"
+  },
   "devDependencies": {
     "@types/vscode": "^1.48.0",
     "@types/glob": "^7.1.3",
