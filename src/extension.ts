@@ -9,15 +9,18 @@ export function activate(context: vscode.ExtensionContext) {
       const activeEditor = vscode.window.activeTextEditor;
       const editorConfig = workspace.getConfiguration("editor"),
         languageConfig = workspace.getConfiguration(`[${activeEditor?.document.languageId}]`);
-        const shouldFormatLanguage = languageConfig["editor.formatOnSave"] ?? false;
-        let shouldFormat = editorConfig.get("formatOnSave") || shouldFormatLanguage;
-      if (shouldFormat) {
-        //TODO: Refactor to use vscode.executeFormatDocumentProvider
-        vscode.commands.executeCommand(
-          "editor.action.format",
-          activeEditor?.document.uri
-        );
-      }
+        const shouldFormatLanguage = languageConfig["editor.formatOnSave"];
+        let shouldFormat = editorConfig.get("formatOnSave");
+        if(shouldFormatLanguage !== undefined && shouldFormatLanguage !== null) {
+          shouldFormat = shouldFormatLanguage;
+        }
+        if (shouldFormat) {
+          //TODO: Refactor to use vscode.executeFormatDocumentProvider
+          vscode.commands.executeCommand(
+            "editor.action.format",
+            activeEditor?.document.uri
+          );
+        }
     })
   );
 }
