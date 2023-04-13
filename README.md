@@ -10,14 +10,22 @@ If Auto Save is enabled this extension will execute the current files formatter 
 
 ## Release Notes
 
-### 1.0.0
+## 1.0.3
 
-Initial release
+Bugfix to read language specific settings for Format On Save like:
+
+"[javascript]": {
+    "editor.formatOnSave": true
+}
+
+## 1.0.2
+
+Icon added
 
 ## 1.0.1
 
 Bugfix to respect the Format On Save setting
 
-## 1.0.2
+### 1.0.0
 
-Icon added
+Initial release

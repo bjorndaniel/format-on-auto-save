@@ -2,7 +2,7 @@
   "name": "format-on-auto-save",
   "displayName": "Format on auto save",
   "description": "Formats the current document on auto save",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "BDSoftware",
   "icon": "images/logo.png",
   "galleryBanner": {
@@ -32,13 +32,13 @@
     "url": "https://github.com/bjorndaniel/format-on-auto-save.git"
   },
   "devDependencies": {
-    "@types/vscode": "^1.48.0",
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.0.0",
     "@types/node": "^14.0.27",
-    "eslint": "^7.6.0",
+    "@types/vscode": "^1.48.0",
     "@typescript-eslint/eslint-plugin": "^3.8.0",
     "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
     "glob": "^7.1.6",
     "mocha": "^8.0.1",
     "typescript": "^3.8.3",

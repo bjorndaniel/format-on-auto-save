@@ -1,14 +1,16 @@
 import * as vscode from "vscode";
 export function activate(context: vscode.ExtensionContext) {
-  const activeEditor = vscode.window.activeTextEditor;
   console.log(
     'Congratulations, your extension "format-on-auto-save" is now active!'
   );
   const workspace = vscode.workspace;
   context.subscriptions.push(
-    workspace.onWillSaveTextDocument((e) => {
+    workspace.onWillSaveTextDocument(() => {
+      const activeEditor = vscode.window.activeTextEditor;
       const editorConfig = workspace.getConfiguration("editor"),
-        shouldFormat = editorConfig.get("formatOnSave");
+        languageConfig = workspace.getConfiguration(`[${activeEditor?.document.languageId}]`);
+        const shouldFormatLanguage = languageConfig["editor.formatOnSave"] ?? false;
+        let shouldFormat = editorConfig.get("formatOnSave") || shouldFormatLanguage;
       if (shouldFormat) {
         //TODO: Refactor to use vscode.executeFormatDocumentProvider
         vscode.commands.executeCommand(
