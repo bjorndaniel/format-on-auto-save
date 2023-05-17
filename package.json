@@ -2,11 +2,11 @@
   "name": "format-on-auto-save",
   "displayName": "Format on auto save",
   "description": "Formats the current document on auto save",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "publisher": "BDSoftware",
   "icon": "images/logo.png",
   "galleryBanner": {
-    "color": "#C80000",
+    "color": "#000000",
     "theme": "dark"
   },
   "engines": {

@@ -10,6 +10,10 @@ If Auto Save is enabled this extension will execute the current files formatter 
 
 ## Release Notes
 
+## 1.0.7
+
+Changed the red banner in marketplace
+
 ## 1.0.6
 
 Bugfix to read language specific settings for Format On Save like:
