@@ -2,7 +2,7 @@
   "name": "format-on-auto-save",
   "displayName": "Format on auto save",
   "description": "Formats the current document on auto save",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "publisher": "BDSoftware",
   "icon": "images/logo.png",
   "galleryBanner": {
