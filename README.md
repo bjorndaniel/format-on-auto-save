@@ -10,6 +10,10 @@ If Auto Save is enabled this extension will execute the current files formatter 
 
 ## Release Notes
 
+## 1.0.8
+
+Fixed a bug where multi-root project specific settings were ignored
+
 ## 1.0.7
 
 Changed the red banner in marketplace
