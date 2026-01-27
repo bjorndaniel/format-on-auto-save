@@ -5,22 +5,23 @@ export function activate(context: vscode.ExtensionContext) {
   );
   const workspace = vscode.workspace;
   context.subscriptions.push(
-    workspace.onWillSaveTextDocument(() => {
-      const activeEditor = vscode.window.activeTextEditor;
-      const editorConfig = workspace.getConfiguration("editor"),
-        languageConfig = workspace.getConfiguration(`[${activeEditor?.document.languageId}]`);
-        const shouldFormatLanguage = languageConfig["editor.formatOnSave"];
-        let shouldFormat = editorConfig.get("formatOnSave");
-        if(shouldFormatLanguage !== undefined && shouldFormatLanguage !== null) {
-          shouldFormat = shouldFormatLanguage;
-        }
+    workspace.onWillSaveTextDocument((event: { document: any; }) => {
+      const document = event.document;
+      const resource = document.uri;
+      const editorConfig = workspace.getConfiguration("editor", resource);
+      const languageConfig = workspace.getConfiguration(
+        `[${document.languageId}]`,
+        resource
+      );
+      const shouldFormatLanguage = languageConfig["editor.formatOnSave"];
+      let shouldFormat = editorConfig.get("formatOnSave");
+      if (shouldFormatLanguage !== undefined && shouldFormatLanguage !== null) {
+        shouldFormat = shouldFormatLanguage;
+      }
         if (shouldFormat) {
-          //TODO: Refactor to use vscode.executeFormatDocumentProvider
-          vscode.commands.executeCommand(
-            "editor.action.format",
-            activeEditor?.document.uri
-          );
-        }
+        // TODO: Refactor to use vscode.executeFormatDocumentProvider
+        vscode.commands.executeCommand("editor.action.format", resource);
+      }
     })
   );
 }
