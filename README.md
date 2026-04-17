@@ -10,6 +10,10 @@ If Auto Save is enabled this extension will execute the current files formatter 
 
 ## Release Notes
 
+## 1.0.9
+
+Fixed a bug where formatting was done even if a text selection was active
+
 ## 1.0.8
 
 Fixed a bug where multi-root project specific settings were ignored
