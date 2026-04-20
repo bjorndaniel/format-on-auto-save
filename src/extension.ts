@@ -31,7 +31,7 @@ export function activate(context: vscode.ExtensionContext) {
       if (shouldFormatLanguage !== undefined && shouldFormatLanguage !== null) {
         shouldFormat = shouldFormatLanguage;
       }
-      if (shouldFormat ){//&& !hasSelectedText(document)) {
+      if (shouldFormat && !hasSelectedText(document)) {
         // TODO: Refactor to use vscode.executeFormatDocumentProvider
         vscode.commands.executeCommand("editor.action.format", resource);
       }
